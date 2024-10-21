@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Updated header with attractive color */
+.header-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e8b57; /* Changed header color to a more attractive green */
+  margin: 20px 0;
+  position: relative;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Underline animation */
+.underline {
+  width: 120px;
+  height: 4px;
+  background-color: #2e8b57; /* Match underline with header */
+  margin: 0 auto;
+  animation: grow 3s forwards infinite;
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 120px;
+  }
+}
+
+/* Container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  background: #fff;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 70px 55px;
+}
+
+/* Card styles */
+.card-list .card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 400px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-list .card-item:hover {
+  transform: scale(1.05);
+}
+
+/* Image covers 100% width and 70% height of the card */
+.card-item .user-image {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  position: relative;
+}
+
+/* Text content below the image */
+.card-item .user-name,
+.card-item .user-profession {
+  margin: 10px 0;
+  text-align: center;
+  color: #030728;
+}
+
+.card-item .user-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card-item .user-profession {
+  font-size: 1rem;
+  color: #6b6b6b;
+}
+
+/* Button inside the image, hidden by default */
+.card-item .message-button {
+  font-size: 0.9rem; /* Smaller button style */
+  padding: 8px 20px; /* Adjusted padding */
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: absolute;
+  top: 70%; /* Center button vertically in image */
+  left: 50%; /* Center button horizontally in image */
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, background 0.3s ease;
+  z-index: 2;
+}
+
+/* Button visibility on image hover */
+.card-item:hover .user-image ~ .message-button {
+  opacity: 1; /* Show button */
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Navigation buttons */
+.swiper-button-prev, .swiper-button-next {
+  color: #2e8b57;
+}
+/* Swiper pagination styling */
+.swiper-pagination-bullet {
+  background: #2e8b57 !important; /* Make the pagination dots green */
+  width: 12px;
+  height: 12px;
+  opacity: 1; /* Make the dots fully visible */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #2e8b57 !important; /* Ensure active dot is green */
+}
+
+/* Header animation */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
+}

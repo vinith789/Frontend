@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slider{
+  background: url(./image/image-1.jpg);
+  background-size: cover;
+  height: 600px;
+  width: 90%;
+  box-shadow: 0px 5px 8px rgba(0,0,0,.3);
+  animation: animate 25s infinite;
+}
+@keyframes animate{
+  20%{
+    background: url(./image/image-2.jpg);
+    background-size: cover;
+  }
+  40%{
+    background: url(./image/image-3.jpg);
+    background-size: cover;
+  }
+  60%{
+    background: url(./image/image-4.png);
+    background-size: cover;
+  }
+  80%{
+    background: url(./image/image-5.png);
+    background-size: cover;
+  }
+  100%{
+    background: url(./image/image-6.png);
+    background-size: cover;
+  }
+
+}
